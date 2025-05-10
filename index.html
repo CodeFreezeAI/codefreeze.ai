@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIE - Artificial Neural Intelligence Engine | CodeFreeze.ai</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --light-bg: #f3f4f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem 4rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .features {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .screenshot {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .screenshot img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 0;
+        }
+
+        /* Update app icon styles */
+        .app-icon {
+            width: 128px;
+            height: 128px;
+            margin-bottom: 1rem;
+        }
+
+        /* Update the ui-container styles */
+        .ui-container {
+            max-width: 1206px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: visible;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            background: white;
+            padding: 1rem;
+        }
+
+        /* Add styles for the UI image */
+        .ui-container img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* Add styles for the ui-showcase section */
+        .ui-showcase {
+            padding: 1rem;
+            background-color: var(--light-bg);
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-button.secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .github-section {
+            background: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .github-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .github-logo {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1rem;
+        }
+
+        pre.code-block {
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            text-align: left;
+            margin: 1.5rem 0;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            max-width: 100%;
+            border: 1px solid #e1e4e8;
+        }
+
+        .compilation-steps {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .compilation-steps ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .compilation-steps li {
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1><span style="color: #000000">Code</span>Freeze.ai </h1>
+        <img src="ANIE_icon_1024.png" alt="ANIE App Icon" class="app-icon">
+        <h1>ANIE for macOS</h1>
+        <p>Experience the future of AI chat with a SwiftUI macOS client. Seamless, powerful and intuitive.</p>
+        <div class="download-buttons">
+            <a href="https://github.com/SuperBox64/ANIE/releases/download/1.0-build-4-release/ANIE.zip" class="cta-button"><strong>Download ANIE</strong></a>
+            <a href="https://github.com/superbox64/anie" class="cta-button secondary"><strong>GitHub Repo</strong></a>
+            <a href="https://github.com/superbox64/anie/releases" class="cta-button secondary"><strong>All Releases</strong></a>
+        </div>
+    </div>
+
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Native Performance</h3>
+                <p>ANIE is built using Swift, CoreML, BERT and Apple Neural Engine. She works with any gpt LLMs including DeepSeek.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Intelligent Conversations</h3>
+                <p>Powered by advanced AI technology, ANIE understands context and provides meaningful, accurate responses.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Beautiful Interface</h3>
+                <p>Designed with SwiftUI, ANIE feels right at home on your Mac. Nothing compares to a native user experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="ui-showcase">
+        <div class="ui-container">
+            <img src="anie_ui.png" alt="ANIE Chat Interface" style="width: 100%; display: block;">
+        </div>
+    </section>
+
+    <section class="github-section">
+        <div class="github-container">
+            <h2 class="section-title">Open Source on GitHub</h2>
+            <p>ANIE is open source and available on GitHub. Get involved, contribute, or simply explore the code.</p>
+            <div class="download-buttons" style="margin: 1.5rem 0;">
+                <a href="https://github.com/superbox64/anie" class="cta-button" style="background-color: #24292e; color: white;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" style="vertical-align: middle; margin-right: 8px;">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    View on GitHub
+                </a>
+            </div>
+            
+            <h3 class="section-title">Download from GitHub Releases</h3>
+            <p>The latest stable releases are available on GitHub:</p>
+            <pre class="code-block">https://github.com/superbox64/anie/releases</pre>
+            
+            <div class="compilation-steps">
+                <h3 class="section-title">Compile from Source</h3>
+                <p>ANIE can be compiled from source using Xcode or the command line:</p>
+                
+                <h4>Using Xcode:</h4>
+                <ol>
+                    <li>Clone the repository: <code>git clone https://github.com/superbox64/anie.git</code></li>
+                    <li>Open ANIE.xcodeproj in Xcode</li>
+                    <li>Select your target device/simulator</li>
+                    <li>Build and run (⌘+R)</li>
+                </ol>
+                
+                <h4>Using Command Line:</h4>
+                <pre class="code-block"># Clone the repository
+git clone https://github.com/superbox64/anie.git
+cd anie
+
+# Build using xcodebuild
+xcodebuild -project ANIE.xcodeproj -scheme ANIE -configuration Release
+
+# The compiled app will be in ./build/Release/ANIE.app</pre>
+                
+                <h4>Create DMG for Distribution:</h4>
+                <pre class="code-block"># After building, run the create_dmg script
+sh ./create_dmg.sh</pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Privacy First</h3>
+                <p>Your chat stays private. ANIE stores all AI conversations locally and ensures your data remains secure.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Profiles Galore</h3>
+                <p>As more GPT LLMs become available, add your own custom profile for each LLM and switch on the fly, anytime!</p>
+            </div>
+            <div class="feature-card">
+                <h3>Feature Packed</h3>
+                <p>With ANIE, edit your chat history, putting you in full control over the conversation. Plus rewind the last message.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><b>&copy; 2025 CodeFreeze.ai - All rights reserved</b></p>
+        <p>Founded by Benson & Bruss</p>
+        <p style="margin-top: 1rem;"><a href="https://github.com/superbox64/anie" style="color: white; text-decoration: underline;">GitHub</a> | <a href="https://github.com/superbox64/anie/releases" style="color: white; text-decoration: underline;">Releases</a></p>
+    </footer>
+</body>
+</html> 
